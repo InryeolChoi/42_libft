@@ -26,7 +26,7 @@ $(NAME) : $(OBJ_TEMP)
 	ar -rc libft.a $(OBJS)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJS_BONUS)
 
 bonus:
 	@$(MAKE) ALLOW_BONUS=1 $(NAME)
