@@ -23,12 +23,13 @@ endif
 all : $(NAME)
 
 $(NAME) : $(OBJ_TEMP)
-	ar -rc libft.a $(OBJS)
+	ar -rc libft.a $(OBJ_TEMP)
 
 clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)
 
-bonus:
+bonus: $(OBJ_TEMP)
+	# sleep 1
 	@$(MAKE) ALLOW_BONUS=1 $(NAME)
 
 fclean: clean
