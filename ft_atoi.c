@@ -6,7 +6,7 @@
 /*   By: inchoi <inchoi@student.42Seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:34:13 by inchoi            #+#    #+#             */
-/*   Updated: 2023/03/17 19:41:56 by inchoi           ###   ########.fr       */
+/*   Updated: 2023/03/21 18:53:50 by inchoi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,10 +21,18 @@ static int	is_blank(char c)
 		return (0);
 }
 
+int	figure_long(int sign)
+{
+	if (sign == 1)
+		return ((int)LONG_MAX);
+	else
+		return ((int)LONG_MIN);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	num;
+	int		sign;
+	long	num;
 
 	sign = 1;
 	while (*str && is_blank(*str))
@@ -38,9 +46,11 @@ int	ft_atoi(const char *str)
 	num = 0;
 	while (*str != '\0' && (*str >= '0' && *str <= '9'))
 	{
+		if (num >= LONG_MAX / 10 || (num == LONG_MAX / 10 - 1 && num % 10 > 7))
+			return (figure_long(sign));
 		num *= 10;
 		num += *str - '0';
 		str++;
 	}
-	return (sign * num);
+	return ((int)(sign * num));
 }
