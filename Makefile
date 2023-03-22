@@ -29,7 +29,7 @@ clean:
 	rm -rf $(OBJS) $(OBJS_BONUS)
 
 bonus: $(OBJ_TEMP)
-	sleep 1
+	# sleep 1
 	@$(MAKE) ALLOW_BONUS=1 $(NAME)
 
 fclean: clean
