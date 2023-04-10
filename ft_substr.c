@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*tooshort(void)
+static char	*tooshort(void)
 {
 	char	*arr;
 
@@ -23,7 +23,7 @@ char	*tooshort(void)
 	return (arr);
 }
 
-int	makelen(char const *s, unsigned int start, size_t len)
+static int	makelen(char const *s, unsigned int start, size_t len)
 {
 	size_t	s_len;
 

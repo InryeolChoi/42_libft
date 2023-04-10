@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	count(char const *s, char c)
+static size_t	count(char const *s, char c)
 {
 	size_t	count;
 
@@ -31,7 +31,7 @@ size_t	count(char const *s, char c)
 	return (count);
 }
 
-char	*make_room(char const *s, char c)
+static char	*make_room(char const *s, char c)
 {
 	char	*room;
 	size_t	len;
@@ -46,7 +46,7 @@ char	*make_room(char const *s, char c)
 	return (room);
 }
 
-char	**ft_free(char **box, int size)
+static char	**ft_free(char **box, int size)
 {
 	int	i;
 

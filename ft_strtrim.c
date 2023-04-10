@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str);
 
-int	in(char x, const char *set)
+static int	in(char x, const char *set)
 {
 	while (*set != '\0')
 	{
@@ -25,7 +25,7 @@ int	in(char x, const char *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	l;
 	size_t	r;
